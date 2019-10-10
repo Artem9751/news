@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'articles.apps.ArticlesConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -124,4 +125,11 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
-CRISPY_TEMPLATE_PACK = 'bootstrap '
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+TIME_ZONE = 'Europe/Minsk'
